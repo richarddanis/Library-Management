@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookService extends AbstractGenericBusinessEntityServiceImpl<Book, Long> {
-    protected BookService(JpaRepository<Book, Long> repository) {
-        super(repository);
+    protected BookService(JpaRepository<Book, Long> bookRepository) {
+        super(bookRepository);
     }
 }
