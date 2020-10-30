@@ -1,8 +1,7 @@
 package com.epam.training.imagine.controller.librarian;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import com.epam.training.imagine.model.Book;
+import com.epam.training.imagine.service.GenericBusinessService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,16 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/librarian/books")
-public class BookManagerController {
-
-    /*
-    @PostMapping
-
-    @DeleteMapping
-
-    @GetMapping
-
-    @GetMapping("/{id}")
-
-     */
+public class BookManagerController extends AbstractRestController<Book, Long> {
+    public BookManagerController(GenericBusinessService<Book, Long> bookService) {
+        super(bookService);
+    }
 }

@@ -1,23 +1,14 @@
 package com.epam.training.imagine.controller.librarian;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import com.epam.training.imagine.model.User;
+import com.epam.training.imagine.service.GenericBusinessService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/librarian/users")
-public class UserManagerController {
-
-    /*
-    @PostMapping
-
-    @DeleteMapping
-
-    @GetMapping
-
-    @GetMapping("/{id}")
-
-     */
+public class UserManagerController extends AbstractRestController<User, Long> {
+    public UserManagerController(GenericBusinessService<User, Long> userService) {
+        super(userService);
+    }
 }

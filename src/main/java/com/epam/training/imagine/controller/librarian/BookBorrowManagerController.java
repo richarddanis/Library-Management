@@ -9,14 +9,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/librarian/borrows")
 public class BookBorrowManagerController {
 
-
-    /*
-    @GetMapping
-
-    @GetMapping("/{id}")
-
-    @DeleteMapping
-
-     */
-
 }
