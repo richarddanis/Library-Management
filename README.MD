@@ -8,6 +8,13 @@
 * Java 8
 * Maven 3.5.0+
 
+# Pre Init User Accounts
+
+Username | Password | Role |
+| :---: | :---: | :---: |
+test | test | USER | 
+lib | test | LIBRARIAN |
+
 # Development
 ## Building
 * From IDE (Eclipse, Intellij) open as a Maven project and compile.

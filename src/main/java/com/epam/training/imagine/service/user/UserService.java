@@ -1,6 +1,7 @@
-package com.epam.training.imagine.service;
+package com.epam.training.imagine.service.user;
 
 import com.epam.training.imagine.model.User;
+import com.epam.training.imagine.service.AbstractGenericBusinessEntityServiceImpl;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 

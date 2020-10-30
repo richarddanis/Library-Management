@@ -1,4 +1,4 @@
-package com.epam.training.imagine.controller;
+package com.epam.training.imagine.controller.user;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;

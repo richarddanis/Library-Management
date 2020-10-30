@@ -1,12 +1,15 @@
 package com.epam.training.imagine.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.Date;
+
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -16,8 +19,16 @@ public class Borrow implements BusinessEntity<Long> {
     @GeneratedValue
     @Column(unique = true, name = "ID")
     private Long id;
+
+    @Column(name = "START_DATE")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startDate;
+
+    @Column(name = "END_DATE")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
+
+    @OneToOne
     private Book book;
 
     public Borrow() {

@@ -1,7 +1,6 @@
 package com.epam.training.imagine.controller.librarian;
 
 import com.epam.training.imagine.service.GenericBusinessService;
-import org.apache.logging.log4j.core.util.Throwables;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;

@@ -7,8 +7,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -31,6 +33,10 @@ public class User implements BusinessEntity<Long>, Serializable {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate creationDate;
+
+    @OneToMany
+    @Column
+    public List<Borrow> borrows;
 
     public User() {
         creationDate = LocalDate.now();
