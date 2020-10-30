@@ -10,10 +10,11 @@
 
 # Pre Init User Accounts
 
-Username | Password | Role |
-| :---: | :---: | :---: |
-test | test | USER | 
-lib | test | LIBRARIAN |
+Username | Password | Role | ID |
+| :---: | :---: | :---: | :---: |
+test | test | USER |  1
+lib | test | LIBRARIAN | 2 
+test01 | test | USER |  3
 
 # Development
 ## Building
