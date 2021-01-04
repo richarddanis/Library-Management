@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.util.Date;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -27,7 +29,11 @@ public class Borrow implements BusinessEntity<Long> {
     @Column(name = "END_DATE")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
-
+    
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
+    private User user;
+    
     @OneToOne
     private Book book;
 
@@ -49,5 +55,9 @@ public class Borrow implements BusinessEntity<Long> {
 
     public Book getBook() {
         return book;
+    }
+    
+    public User getUser() {
+        return user;
     }
 }
