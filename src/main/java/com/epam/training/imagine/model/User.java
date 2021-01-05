@@ -34,8 +34,7 @@ public class User implements BusinessEntity<Long>, Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate creationDate;
 
-    @OneToMany
-    @Column
+    @OneToMany(mappedBy = "user")
     public List<Borrow> borrows;
 
     public User() {
