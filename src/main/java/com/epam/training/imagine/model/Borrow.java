@@ -1,6 +1,7 @@
 package com.epam.training.imagine.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
@@ -8,27 +9,31 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import java.util.Date;
+
+import java.io.Serializable;
+import java.time.LocalDate;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Borrow implements BusinessEntity<Long> {
+public class Borrow implements BusinessEntity<Long>, Serializable {
 
-    @Id
+	private static final long serialVersionUID = 3259407635309423200L;
+
+	@Id
     @GeneratedValue
     @Column(unique = true, name = "ID")
     private Long id;
 
     @Column(name = "START_DATE")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name = "END_DATE")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date endDate;
+    private LocalDate endDate;
     
     @ManyToOne
     @JoinColumn(name = "USER_ID")
@@ -45,11 +50,11 @@ public class Borrow implements BusinessEntity<Long> {
         return id;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 

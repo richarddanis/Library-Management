@@ -1,23 +1,24 @@
 package com.epam.training.imagine.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements BusinessEntity<Long>, Serializable {
 
-    @Id
+	private static final long serialVersionUID = -4340600080692791262L;
+
+	@Id
     @GeneratedValue
     @Column(unique = true, name = "ID")
     private Long id;
@@ -33,9 +34,6 @@ public class User implements BusinessEntity<Long>, Serializable {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate creationDate;
-
-    @OneToMany(mappedBy = "user")
-    public List<Borrow> borrows;
 
     public User() {
         creationDate = LocalDate.now();
