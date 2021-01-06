@@ -6,13 +6,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 import java.io.Serializable;
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Book implements BusinessEntity<Long>, Serializable {
 
-    @Id
+	private static final long serialVersionUID = 6726189393642295288L;
+
+	@Id
     @GeneratedValue
     @Column(unique = true, name = "ID")
     private Long id;
