@@ -7,12 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BookBorrowService extends AbstractGenericBusinessEntityServiceImpl<Borrow, Long> {
+public class BorrowServiceImpl extends AbstractGenericBusinessEntityServiceImpl<Borrow, Long> implements BorrowService {
 	
-    public BookBorrowService(JpaRepository<Borrow, Long> borrowRepository) {
+    public BorrowServiceImpl(JpaRepository<Borrow, Long> borrowRepository) {
         super(borrowRepository);
     }
     
+    @Override
     public void extend(Long borrowId, User user) {
     	
     }
