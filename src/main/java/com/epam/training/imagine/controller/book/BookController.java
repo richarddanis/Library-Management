@@ -15,7 +15,7 @@ import com.epam.training.imagine.model.Book;
 import com.epam.training.imagine.model.Borrow;
 import com.epam.training.imagine.model.User;
 import com.epam.training.imagine.service.book.BookService;
-import com.epam.training.imagine.service.borrow.BookBorrowService;
+import com.epam.training.imagine.service.borrow.BorrowService;
 import com.epam.training.imagine.service.subscription.SubscriptionService;
 
 @RestController
@@ -26,7 +26,7 @@ public class BookController {
 	private BookService bookService;
 	
 	@Autowired
-	private BookBorrowService borrowService;
+	private BorrowService borrowService;
 	
 	@Autowired
 	private SubscriptionService subscriptionService;
