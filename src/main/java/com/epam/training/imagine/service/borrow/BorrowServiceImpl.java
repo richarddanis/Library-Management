@@ -2,15 +2,21 @@ package com.epam.training.imagine.service.borrow;
 
 import com.epam.training.imagine.model.Borrow;
 import com.epam.training.imagine.model.User;
-import com.epam.training.imagine.service.AbstractGenericBusinessEntityServiceImpl;
+import com.epam.training.imagine.repository.BorrowRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BorrowServiceImpl extends AbstractGenericBusinessEntityServiceImpl<Borrow, Long> implements BorrowService {
+public class BorrowServiceImpl implements BorrowService {
 	
-    public BorrowServiceImpl(JpaRepository<Borrow, Long> borrowRepository) {
-        super(borrowRepository);
+	@Autowired
+	private BorrowRepository borrowRepository;
+	
+    @Override
+    public JpaRepository<Borrow, Long> getRepository() {
+    	return borrowRepository;
     }
     
     @Override
