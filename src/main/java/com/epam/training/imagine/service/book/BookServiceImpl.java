@@ -1,18 +1,23 @@
 package com.epam.training.imagine.service.book;
 
 import com.epam.training.imagine.model.Book;
-import com.epam.training.imagine.service.AbstractGenericBusinessEntityServiceImpl;
+import com.epam.training.imagine.repository.BookRepository;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BookServiceImpl extends AbstractGenericBusinessEntityServiceImpl<Book, Long> implements BookService {
+public class BookServiceImpl implements BookService {
 	
-    protected BookServiceImpl(JpaRepository<Book, Long> bookRepository) {
-        super(bookRepository);
+	@Autowired
+	private BookRepository bookRepository;
+	
+    @Override
+    public JpaRepository<Book, Long> getRepository() {
+    	return bookRepository;
     }
     
     @Override
